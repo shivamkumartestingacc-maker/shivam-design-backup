@@ -1,0 +1,32 @@
+{
+  "vercel.json": {
+    "mtime": 1793792829.9279842,
+    "seen": 1793793463.2373824,
+    "ast_hash": "fe0f8ede344834782c16157745e1037d",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1793792829.9159842,
+    "seen": 1793793463.237389,
+    "ast_hash": "393dbe2f37347e8bca2615593a9b9bfc",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1793792829.923984,
+    "seen": 1793793463.2373922,
+    "ast_hash": "1bcb715ab5f551570288242ca1d2d45e",
+    "semantic_hash": ""
+  },
+  "paytm-case-study.html": {
+    "mtime": 1793792829.923984,
+    "seen": 1793793463.2373934,
+    "ast_hash": "6d0915ed0c1324d968bbb98eee32ff39",
+    "semantic_hash": ""
+  },
+  "portfolio-v2.html": {
+    "mtime": 1793792829.923984,
+    "seen": 1793793463.237395,
+    "ast_hash": "1b92c6d2c11b23c2187dc49d364f0883",
+    "semantic_hash": ""
+  }
+}

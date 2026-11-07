@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Vudio · connect-4</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../vudio.css"><link rel="stylesheet" href="screens.css">
+<style>body{margin:0;padding:0;background:transparent;overflow:hidden}.frame{border-radius:0}</style></head><body><svg width="0" height="0" style="position:absolute">
+  <symbol id="home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+  <symbol id="send" viewBox="0 0 24 24"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="lib" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+  <symbol id="chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
+  <symbol id="right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></symbol>
+  <symbol id="eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></symbol>
+  <symbol id="badge" viewBox="0 0 24 24"><path d="M12 2l2.4 2 3.1-.4.9 3 2.7 1.6-1 3 1 3-2.7 1.6-.9 3-3.1-.4L12 22l-2.4-2-3.1.4-.9-3L2.9 15.8l1-3-1-3L5.6 8.2l.9-3 3.1.4z" fill="currentColor"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke="#fff"/></symbol>
+  <symbol id="card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M2.5 10h19M6 15h4"/></symbol>
+  <symbol id="toggle" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="7" cy="12" r="3"/></symbol>
+  <symbol id="help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="out" viewBox="0 0 24 24"><path d="M14 4H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h8M17 8l4 4-4 4M21 12H10"/></symbol>
+  <symbol id="link2" viewBox="0 0 24 24"><path d="M14 3h7v7M21 3l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></symbol>
+  <symbol id="img" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></symbol>
+  <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1" fill="currentColor"/><circle cx="12" cy="12" r="1" fill="currentColor"/><circle cx="19" cy="12" r="1" fill="currentColor"/></symbol>
+  <symbol id="trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></symbol>
+  <symbol id="undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/></symbol>
+  <symbol id="redo" viewBox="0 0 24 24"><path d="m15 14 5-5-5-5"/><path d="M20 9H10a6 6 0 0 0 0 12h3"/></symbol>
+  <symbol id="zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="branch" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="6" cy="19" r="2"/><path d="M6 7v10M18 9c0 5-6 4-11 9"/></symbol>
+  <symbol id="tag" viewBox="0 0 24 24"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="8" cy="8" r="1.5"/></symbol>
+  <symbol id="flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+  <symbol id="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="grip" viewBox="0 0 24 24"><circle cx="9" cy="6" r="1" fill="currentColor"/><circle cx="15" cy="6" r="1" fill="currentColor"/><circle cx="9" cy="12" r="1" fill="currentColor"/><circle cx="15" cy="12" r="1" fill="currentColor"/><circle cx="9" cy="18" r="1" fill="currentColor"/><circle cx="15" cy="18" r="1" fill="currentColor"/></symbol>
+  <symbol id="c-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5h.01"/></symbol>
+  <symbol id="c-arrow" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 15l6-6M10 9h5v5"/></symbol>
+  <symbol id="c-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9.5"/></symbol>
+  <symbol id="c-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 9 6 6M15 9l-6 6"/></symbol>
+  <symbol id="c-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5h4"/></symbol>
+  <symbol id="book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7"/></symbol>
+  <symbol id="compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
+  <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol>
+  <symbol id="box" viewBox="0 0 24 24"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></symbol>
+  <symbol id="shirt" viewBox="0 0 24 24"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0z"/></symbol>
+</svg><section class="frame" id="connect-4" style="height:1000px">
+  <aside class="v-sidebar"><img class="logo" src="../assets/vudio-logo.svg" alt="vudio.ai"><nav class="v-nav"><a class="v-nav-item" aria-current="page"><svg class="i"><use href="#home"/></svg>Home</a><a class="v-nav-item"><svg class="i"><use href="#spark"/></svg>Create<svg class="i end"><use href="#down"/></svg></a><a class="v-nav-item"><svg class="i"><use href="#send"/></svg>Publish<svg class="i end"><use href="#down"/></svg></a><a class="v-nav-item"><svg class="i"><use href="#chat"/></svg>Automation</a><a class="v-nav-item"><svg class="i"><use href="#chart"/></svg>Analytics</a></nav><div class="v-account"><span class="v-avatar" style="background-image:url(../assets/thumb-1.jpg)"></span><div><b>John Carter</b><small>Account &amp; settings</small></div><svg class="i end"><use href="#right"/></svg></div></aside>
+  <main class="main" aria-hidden="true">
+    <div class="v-topbar"><span class="v-topbar__title">Home</span><span class="v-topbar__trial">30 days trial remaining</span><button class="v-btn v-btn--secondary">Explore plans</button><button class="v-btn v-btn--upgrade"><svg class="i"><use href="#spark"/></svg>Start subscription</button><button class="v-icon-btn" aria-label="Notifications"><svg class="i"><use href="#bell"/></svg><span class="v-badge-count">2</span></button></div>
+    <div class="content"><div class="col stack">
+      <div class="hello"><h1>Welcome to Vudio, John</h1><p>Five short steps from a product link to posts that sell for you.</p></div>
+      <div class="tour">
+        <div class="tour-vid"><span class="play"><svg class="i"><use href="#play"/></svg></span><span class="dur">2:04</span></div>
+        <div class="tour-copy">
+          <span class="v-hint">Step 1 · 2 min</span>
+          <h2>See what Vudio does</h2>
+          <p>Watch a product link become a reel, a scheduled post and an automatic DM.</p>
+          <div class="actions"><button class="v-btn v-btn--primary"><svg class="i"><use href="#compass"/></svg>Start with a guide</button><button class="v-btn v-btn--ghost"><svg class="i"><use href="#book"/></svg>See how it works</button></div>
+        </div>
+        <div class="tour-prog"><span class="v-ring" style="--p:0;--size:72px">0/5</span><span class="v-hint">about 15 min</span></div>
+      </div>
+      <div>
+        <div class="v-shd"><h2>Then, step by step</h2></div>
+        <div class="tiles"><div class="v-tile hue-ink" style="position:relative"><span class="num">2</span><div class="v-tile__pv"><span class="pv-hub"><svg class="i" style="width:22px;height:22px"><use href="#link"/></svg></span><span class="v-ch v-ch--ig pv-orbit" style="left:22%;top:22%">IG</span><span class="v-ch v-ch--fb pv-orbit" style="right:22%;top:20%">f</span><span class="v-ch v-ch--yt pv-orbit" style="left:20%;bottom:20%">YT</span><span class="v-ch v-ch--tt pv-orbit" style="right:22%;bottom:22%">TT</span></div><h3><span class="v-ic"><svg class="i"><use href="#link"/></svg></span>Connect your socials</h3><p><span class="v-hint">2 min · </span>Pick where Vudio posts and replies.</p><div class="actions meta"><button class="v-btn v-btn--sm v-btn--primary"><svg class="i"><use href="#compass"/></svg>Start with a guide</button></div></div><div class="v-tile hue-video" style="position:relative"><span class="num">3</span><div class="v-tile__pv"><span class="pv-ph" style="background-image:url(../assets/p-sneaker.jpg);left:50%;top:38px;transform:translateX(-74px) rotate(-8deg)"></span><span class="pv-ph" style="background-image:url(../assets/p-blazer.jpg);left:50%;top:32px;transform:translateX(-20px) rotate(5deg)"></span><span class="pv-ai" style="left:50%;top:22px;transform:translateX(22px)">✦ AI</span></div><h3><span class="v-ic"><svg class="i"><use href="#spark"/></svg></span>Create your first asset</h3><p><span class="v-hint">3 min · </span>Paste a link; Vudio makes the ads.</p><div class="actions meta"><button class="v-btn v-btn--sm v-btn--secondary"><svg class="i"><use href="#compass"/></svg>Start with a guide</button></div></div><div class="v-tile hue-post" style="position:relative"><span class="num">4</span><div class="v-tile__pv"><div class="pv-cal"><b>November</b><span></span><span></span><span></span><span></span><span class="on"></span><span></span><span></span><span></span><span class="th"></span><span></span><span></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div><h3><span class="v-ic"><svg class="i"><use href="#send"/></svg></span>Schedule your first post</h3><p><span class="v-hint">2 min · </span>Right account, right time.</p><div class="actions meta"><button class="v-btn v-btn--sm v-btn--secondary"><svg class="i"><use href="#compass"/></svg>Start with a guide</button></div></div><div class="v-tile hue-dm" style="position:relative"><span class="num">5</span><div class="v-tile__pv"><div class="pv-msg pv-in"><small>@sara · comment</small>Link please? 😍</div><div class="pv-msg pv-out"><small>DM · automatic</small>Here's the blazer 👉</div></div><h3><span class="v-ic"><svg class="i"><use href="#chat"/></svg></span>Turn comments into sales</h3><p><span class="v-hint">4 min · </span>DM the product link to commenters.</p><div class="actions meta"><button class="v-btn v-btn--sm v-btn--secondary"><svg class="i"><use href="#compass"/></svg>Start with a guide</button></div></div></div>
+      </div>
+    </div></div>
+  </main>
+  <div class="v-scrim" style="border-radius:20px"></div>
+  <div class="stage" style="left:0">
+    <div class="v-modal cx">
+      <div class="cx-hd" style="text-align:center;align-items:center">
+        <div class="cx-top" style="width:100%"><span class="cx-plat-chip"><span class="v-ch v-ch--ig"></span>Instagram · Business</span><button class="v-btn v-btn--ghost v-btn--sm" aria-label="Close"><svg class="i"><use href="#x"/></svg></button></div>
+        <span class="cx-done"><svg class="i"><use href="#check"/></svg></span>
+        <h2>Instagram is connected</h2>
+        <p>We found 2 accounts. Choose which ones Vudio can use.</p>
+        <ol class="cx-steps"><li class="done">Platform</li><li class="done">Account type</li><li class="done">Authorize</li><li class="done">Done</li></ol>
+      </div>
+      <div class="cx-bd">
+        <label class="acct" for="cd1"><span class="pic" style="background-image:url(../assets/p-blazer.jpg)"><span class="v-ch v-ch--ig"></span></span><span><b>@mirastudio</b><small>Business · 12.4k followers</small></span><span class="v-st v-st--success" style="margin-left:auto"><svg class="i"><use href="#c-check"/></svg>DMs on</span><input type="checkbox" class="v-check" id="cd1" checked style="margin-left:12px"></label>
+        <label class="acct" for="cd2"><span class="pic" style="background-image:url(../assets/p-bra.jpg)"><span class="v-ch v-ch--ig"></span></span><span><b>@mirastudio.active</b><small>Business · 3.1k followers</small></span><input type="checkbox" class="v-check" id="cd2" checked></label>
+        <div class="cx-linked"><span class="v-ch v-ch--fb"></span><span><b>Facebook Page “Mira Studio”</b> connected with it, so Messenger works too.</span></div>
+        <div class="cx-next"><span class="v-ic v-ic--lg hue-video"><svg class="i"><use href="#spark"/></svg></span><div><b>Next: create your first asset</b><small>About 3 minutes. Have a product link ready.</small></div></div>
+      </div>
+      <div class="v-modal__ft"><button class="v-btn v-btn--ghost"><svg class="i"><use href="#plus"/></svg>Connect another platform</button><span class="grow"></span><button class="v-btn v-btn--primary">Create my first asset<svg class="i"><use href="#arrow"/></svg></button></div>
+    </div>
+  </div>
+</section></body></html>
